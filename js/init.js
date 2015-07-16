@@ -13,13 +13,19 @@ function require(script) {
 }
 
 
-require("/scripts/.js");
-  require("js/killring.js");
-  require("js/history.js");
-  require("js/readline.js");
-  require("js/shell.js");
-  require("js/pathhandler.js");
-  require("js/input.js");
+var path = "sophies-world/js/"
+
+var scripts = [
+    "killring.js",
+    "history.js",
+    "readline.js",
+    "shell.js",
+    "pathhandler.js",
+    "input.js" ]
+
+for(index = 0; index < scripts.length; index++) {
+    require(path + scripts[index]);
+}
 
 
 var Josh = Josh || {};
