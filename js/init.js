@@ -21,7 +21,7 @@ var scripts = [
     "readline.js",
     "shell.js",
     "pathhandler.js",
-    "input.js" ]
+    "input.js" ];
 
 for(index = 0; index < scripts.length; index++) {
     require(path + scripts[index]);
