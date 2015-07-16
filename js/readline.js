@@ -373,13 +373,13 @@ Josh.Version = "0.2.10";
       }
       suspend(function(resumeCallback) {
         _onEnter(text, function(text) {
-		// if(text) {
+          if(text) {
             _text = text;
             _cursor = _text.length;
-	    //}
-          if(_onChange) {
-            _onChange(self.getLine());
           }
+	  // if(_onChange) {
+            _onChange(self.getLine());
+          //}
           resumeCallback();
         });
       });

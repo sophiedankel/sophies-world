@@ -31,12 +31,13 @@
     html, body {
       height: 100%;
       margin: 0;
+      background-color: #000000;
     }
     #shell-panel {
       min-height: 100%;
       width: 100%;
       background-color: #000000;
-      color: #00fe00;
+      color: #F0FFF0;
       font-family: monospace;
       overflow: scroll;
       overflow-x: hidden;
@@ -45,7 +46,8 @@
     }
     #shell-cli .prompt {
       font-weight: bold;
-    }</style>
+    }
+  </style>
   <script>
     $(document).ready(function() {
       var history = new Josh.History({ key: 'josh.helloworld'});
