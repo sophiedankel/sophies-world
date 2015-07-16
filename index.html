@@ -27,18 +27,22 @@
   <script src="js/readline.js"></script>
   <script src="js/shell.js"></script>
   <script src="js/pathhandler.js"></script>
-  <script src="js/example.js"></script>
   <style type="text/css">
-    #shell-panel {
+    html, body {
       height: 100%;
+      margin: 0;
+    }
+
+    #shell-panel {
+      min-height: 100%;
       width: 100%;
-      background-color: #002f05;
+      background-color: #000000;
       color: #00fe00;
       font-family: 'Source Code Pro';
       overflow: scroll;
-      overflow-x: visible;
+      overflow-x: hidden;
       overflow-y: scroll;
-      border: 1px dashed #E6EBE0;
+      word-wrap: break-word;
     }
 
     #shell-cli .prompt {
