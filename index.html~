@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ASCII Art with Sierpinski Triangles!</title>
+  <p><strong>Instructions:</strong> enter some characters or something</strong></p>
+
+  <form action="">
+  <input type="text" name="fname" value="John"><br>
+  <input type="submit" value="Submit form">
+  </form>
+
+</body>
+</html>
