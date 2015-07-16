@@ -12,9 +12,8 @@ function require(script) {
 	});
 }
 
-
-var path = "sophies-world/js/"
-
+// Import dependencies
+var path = "js/"
 var scripts = [
     "killring.js",
     "history.js",
@@ -32,10 +31,8 @@ var Josh = Josh || {};
 $(document).ready(function() {
 	var history = new Josh.History({ key: 'josh.helloworld'});
 	var shell = Josh.Shell({history: history});
-	var promptCounter = 0;
 	shell.onNewPrompt(function(callback) {
-		promptCounter++;
-		callback("[" + promptCounter + "] $");
+		callback("sophies-world $");
 	    });
 	shell.setCommandHandler("hello", {
 		exec: function(cmd, args, callback) {
