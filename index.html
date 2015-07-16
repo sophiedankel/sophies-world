@@ -7,7 +7,7 @@
   <title>Sophie shell</title>
   <link rel="stylesheet" href="stylesheets/styles.css">
   <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-  <script src="javascripts/respond.js"></script>
+  <script src="js/respond.js"></script>
   <!--[if lt IE 9]>
   <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
@@ -21,12 +21,12 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.2/underscore-min.js"></script>
   <script>Josh = {Debug: true };</script>
-  <script src="javascripts/killring.js"></script>
-  <script src="javascripts/history.js"></script>
-  <script src="javascripts/readline.js"></script>
-  <script src="javascripts/shell.js"></script>
-  <script src="javascripts/pathhandler.js"></script>
-  <script src="javascripts/example.js"></script>
+  <script src="js/killring.js"></script>
+  <script src="js/history.js"></script>
+  <script src="js/readline.js"></script>
+  <script src="js/shell.js"></script>
+  <script src="js/pathhandler.js"></script>
+  <script src="js/example.js"></script>
   <style type="text/css">
     #shell-panel {
       height: 200px;
@@ -74,23 +74,6 @@
   <strong><em>Javascript Online SHell</em></strong> provides a toolkit for building bash-like command line consoles for web pages. It consists of the following components:
 </p>
 
-<ul>
-  <li>
-    <code>readline.js</code> - full readline support for ctrl sequences, tab, history, etc.
-  </li>
-  <li>
-    <code>shell.js</code> - visual presentation of the shell and command handling
-  </li>
-  <li>
-    <code>pathhandler.js</code> - provide cd, ls, pwd and path completion toolkit
-  </li>
-  <li>
-    <code>history.js</code> - localStorage backed command history
-  </li>
-  <li>
-    <code>killring.js</code> - killring for kill &amp; yank handling in readline
-  </li>
-</ul>
 
 <h2>Live Demo</h2>
 Drag bottom of shell to change size.
@@ -102,93 +85,6 @@ Drag bottom of shell to change size.
 
 <p><em><a href="docs/example.html">Annotated source of demo</a></em></p>
 
-<h2>Tutorials</h2>
-<ul>
-  <li>
-    <a href="helloworld.html">Hello world</a> - put a console on a web page and add a new custom command with completion
-  </li>
-  <li><a href="quakeconsole.html">Quake Console</a> - Create a <em>quake</em>-style console with <code>ls</code>,
-    <code>cd</code>, <code>pwd</code> and bash filename tab-completion
-  </li>
-  <li>
-    <a href="githubconsole.html">GitHub Console</a> - Extend the Quake Console to talk to GitHub's REST API to navigate repositories, their branches and file system
-  </li>
-</ul>
-
-<h2>Articles</h2>
-<ul>
-  <li><a href="http://www.claassen.net/geek/blog/2013/03/cli-all-the-things-introducing-josh-js.html" target="_blank">CLI all the things: Introducing Josh.js</a> -- Article about the origins of Josh.js with an example console for wordpress sites.</li>
-  <li><a href="http://www.claassen.net/geek/blog/2013/08/using-josh-for-form-data.html" target="_blank">Using Josh for form data</a> -- Article about changes to Josh.js to allow binding to an element and new helper <code>Josh.Input</code> for binding to input elements.</li>
-</ul>
-<h2>License</h2>
-
-<p>josh.js is licensed under the Apache 2.0 License</p>
-
-<h2>
-  <a name="status" class="anchor" href="#status"><span class="mini-icon mini-icon-link"></span></a>Status</h2>
-
-<ul>
-  <li>code is ready for experimental use
-
-    <ul>
-      <li>Tested under Chrome, Firefox, Safari and IE9</li>
-      <li>API may not yet be stable</li>
-    </ul>
-  </li>
-  <li>needs minified versions of complete toolkit and just readline.js</li>
-  <li>needs code documentation and documentation site</li>
-  <li>would like to add AMD support</li>
-  <li>implement <em>NCurses</em> for better UI control</li>
-  <li>Readline has not been tested with non-ascii.</li>
-</ul>
-<h2>
-  <a name="usage" class="anchor" href="#usage"><span class="mini-icon mini-icon-link"></span></a>Usage</h2>
-
-<p>Until documentation is written, refer to <code>index.html</code> and
-  <a href="docs/example.html">the annotated version</a> of
-  <code>example.js</code> for a sample implementation of a shell with path completion.</p>
-
-<h2>
-  <a name="components" class="anchor" href="#components"><span class="mini-icon mini-icon-link"></span></a>Components
-</h2>
-
-<p><strong><em>josh</em></strong> is built from 5 components and can be used in part or in full.</p>
-
-<h3>
-  <a name="readlinejs" class="anchor" href="#readlinejs"><span class="mini-icon mini-icon-link"></span></a><a href="readline.html">readline.js</a>
-</h3>
-
-<p><code>readline.js</code> has no dependencies on any outside libraries, although it requires either
-  <code>history.js</code> and <code>killring.js</code> or objects implementing the same calls.</p>
-
-<p>It implements key trapping to bring
-  <a href="http://cnswww.cns.cwru.edu/php/chet/readline/readline.html">GNU Readline</a> like line editing to the browser. It can be used by itself to bring readline support to custom data entry fields or in conjunction with
-  <code>shell.js</code> to create a full console.</p>
-
-<h4>
-  <a name="line-editing" class="anchor" href="#line-editing"><span class="mini-icon mini-icon-link"></span></a>Line Editing
-</h4>
-
-<p>In the below <code>C-x</code> ode> or <code>Right Arrow</code>
-  </dt>
-  <dd>Move back one word</dd>
-  <dt><code>C-f</code></dt>
-  <dd>Move forward one character</dd>
-  <dt><code>M-f</code></dt>
-  <dd>Move forward one word</dd>
-  <dt>
-    <code>C-a</code> or <code>Home</code>
-  </dt>
-  <dd>Move to the beginning of the line</dd>
-  <dt>
-    <code>C-e</code> or <code>End</code>
-  </dt>
- ode></dt>
-  <dd>Rotate to the next item in killring and yank it. Must be preceded by <em>yank</em>
-  </dd>
-
-  <br>
-  <dt><em>Histoocs</a></p>
 <h3>
   <a name="shelljs" class="anchor" href="#shelljs"><span class="mini-icon mini-icon-link"></span></a><a href="shell.html">shell.js</a>
 </h3>
