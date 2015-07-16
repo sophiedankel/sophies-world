@@ -377,9 +377,9 @@ Josh.Version = "0.2.10";
             _text = text;
             _cursor = _text.length;
           }
-	  // if(_onChange) {
+	  if(_onChange) {
             _onChange(self.getLine());
-          //}
+          }
           resumeCallback();
         });
       });
