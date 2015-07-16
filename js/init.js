@@ -1,28 +1,29 @@
-function loadScript(url, callback)
-{
-    // Adding the script tag to the head as suggested before
-    var head = document.getElementsByTagName('head')[0];
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = url;
-
-    // Then bind the event to the callback function.
-    // There are several events for cross browser compatibility.
-    script.onreadystatechange = callback;
-    script.onload = callback;
-
-    // Fire the loading
-    head.appendChild(script);
+function require(script) {
+    $.ajax({
+	    url: script,
+		dataType: "script",
+		async: false,           // <-- This is the key
+		success: function () {
+		// all good...
+	    },
+		error: function () {
+		throw new Error("Could not load script " + script);
+	    }
+	});
 }
 
-loadScript("js/killring.js", init);
-loadScript("js/history.js", init);
-loadScript("js/readline.js", init);
-loadScript("js/shell.js", init);
-loadScript("js/pathhandler.js", init);
-loadScript("js/input.js", init);
 
-var init = $(document).ready(function() {
+require("/scripts/.js");
+  require("js/killring.js");
+  require("js/history.js");
+  require("js/readline.js");
+  require("js/shell.js");
+  require("js/pathhandler.js");
+  require("js/input.js");
+
+
+
+$(document).ready(function() {
 	var history = new Josh.History({ key: 'josh.helloworld'});
 	var shell = Josh.Shell({history: history});
 	var promptCounter = 0;
