@@ -34,8 +34,7 @@ $(document).ready(function() {
 	shell.setCommandHandler("hello", {
 		exec: function(cmd, args, callback) {
 		    var arg = args[0] || '';
-          var response = "who is this " + arg + " you are talking to?"\
-	      ;
+          var response = "who is this " + arg + " you are talking to?";
           if(arg === 'josh') {
 	      response = 'pleased to meet you.';
           } else if(arg === 'world') {
