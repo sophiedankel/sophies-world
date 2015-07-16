@@ -15,12 +15,12 @@ function loadScript(url, callback)
     head.appendChild(script);
 }
 
-loadScript("killring.js", myPrettyCode);
-loadScript("history.js", myPrettyCode);
-loadScript("readline.js", myPrettyCode);
-loadScript("shell.js", myPrettyCode);
-loadScript("pathhandler.js", myPrettyCode);
-loadScript("input.js", myPrettyCode);
+loadScript("killring.js", init);
+loadScript("history.js", init);
+loadScript("readline.js", init);
+loadScript("shell.js", init);
+loadScript("pathhandler.js", init);
+loadScript("input.js", init);
 
 var init = $(document).ready(function() {
 	var history = new Josh.History({ key: 'josh.helloworld'});
