@@ -22,7 +22,7 @@ require("/scripts/.js");
   require("js/input.js");
 
 
-
+var Josh = Josh || {};
 $(document).ready(function() {
 	var history = new Josh.History({ key: 'josh.helloworld'});
 	var shell = Josh.Shell({history: history});
