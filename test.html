@@ -65,13 +65,13 @@ $(document).ready(function() {
     shell.setCommandHandler("hello", {
         exec: function(cmd, args, callback) {
             var arg = args[0] || '';
-            var response = "who is this " + arg + " you are talking to?";
+            var response = "hello! you can call me " + arg;
             if (arg === 'josh') {
                 response = 'pleased to meet you.';
             } else if (arg === 'world') {
                 response = 'world says hi.'
             } else if (!arg) {
-                response = 'who are you saying hello to?';
+                response = 'Hi!!!';
             }
             callback(response);
         },
